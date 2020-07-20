@@ -372,6 +372,7 @@ class WC_Admin_List_Table_Orders extends WC_Admin_List_Table
 	 *
 	 * @since 3.3.0
 	 */
+	/* Modificacion de template */
 	/* se modifo el template para que imprima el mapa de google maps */
 	public function order_preview_template()
 	{

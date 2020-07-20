@@ -2,9 +2,9 @@
 
 Se agregaron las siguiente funciones
 
-- ✅ Mapa intereactivo para que el usuario eliga su direccion de recojo
+- ✅ Mapa interactivo para que el usuario eliga su direccion de recojo
 - ✅ Calculo de envio automatico por codigo postal
-- ✅ Link de Google Maps para obtener la ubicacion precisa del cleinte
+- ✅ Link de Google Maps para obtener la ubicacion precisa del cliente
 - ✅ Impresion de detalle con el mapa
 
 ##### Importante:

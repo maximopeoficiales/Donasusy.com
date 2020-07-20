@@ -1,6 +1,17 @@
-# Modificaciones en doñamarce.com
+# Mapa de Google y calculo de envio automatico en Woocommerce
 
-#### Agregos el plugin Chekout Fields de Woocomerce y creamos los siguiente campos
+Se agregaron las siguiente funciones
+
+- ✅ Mapa intereactivo para que el usuario eliga su direccion de recojo
+- ✅ Calculo de envio automatico por codigo postal
+- ✅ Link de Google Maps para obtener la ubicacion precisa del cleinte
+- ✅ Impresion de detalle con el mapa
+
+##### Importante:
+
+Hay archivos que no es optimo pegar todo codigo de los archivos del repositorio, ya que si se actualiza woocomerce. quizas modifique algunas propiedades. Asi que es importante solo copiar los bloques de codigo especificados en la documentacion
+
+#### Agregamos el plugin Chekout Fields de Woocomerce y creamos los siguiente campos
 
 - ✅ Activamos el billing_postcode
 - ✅ Creamos ce_distanciakm
@@ -130,7 +141,7 @@ public function order_preview_template()
 
 ![template](https://raw.githubusercontent.com/maximopeoficiales/Donasusy.com/master/imgs/modalPedidoOjito.PNG)
 
-#### 8.Modifacion en el template de edicion de pedido
+#### 8.Modificacion en el template de edicion de pedido
 
 Aqui se agrego el codigo para la obtencion de link de gmaps, la funcion imprimir, se uso una peticion ajax para obtener los datos y llenar el modal que se agrego.
 
@@ -140,24 +151,28 @@ Esto se encuentra en el repositorio:
 Ruta: **wp-content\plugins\woocommerce\includes\admin\meta-boxes\class-wc-meta-box-order-data.php**
 
 Buscamos en el archivo del repositorio
+
 ```php
 <div class="order_data_column_container">
 ```
+
 Aqui pegamos todo el codigo que se indica como comentario **bloque de codigo**
 
 Luego buscamos:
+
 ```php
 if (apply_filters('woocommerce_enable_order_notes_field', 'yes' == get_option('woocommerce_enable_order_comments', 'yes')) && $post->post_excerpt) {
   echo '<p class="order_note"><strong>' . __('Customer provided note:', 'woocommerce') . '</strong> ' . nl2br(esc_html($post->post_excerpt)) . '</p>';
 }
 ?>
 ```
+
 Debajo de este bloque de codigo pegamos:
+
 ```php
 <!-- CAMPO url Gmaps -->
   <p id="url_mapa"></p>
 <!-- campo url gmaps -->
 ```
-
 
 ![template](https://raw.githubusercontent.com/maximopeoficiales/Donasusy.com/master/imgs/modalImprimirResumenn.PNG)

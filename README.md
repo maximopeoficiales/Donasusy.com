@@ -9,6 +9,8 @@
 
 **Nota:** Deben ser los mismo nombres para que funcione el codigo
 
+![Custom Fields](https://raw.githubusercontent.com/maximopeoficiales/Donasusy.com/master/imgs/CustomFields.PNG)
+
 #### 1. Instalar el plugin head and footer scripts a Wordpress
 
 Este plugin es necesario para poder agregar scripts en la pagina de **Finalizar Compra** , scripts como los iconos de FontAwesome,Google Maps y algunas variables globales
@@ -42,7 +44,9 @@ Si no especifica las coordenadas de la Tienda se pondra las coordenadas de Lima,
   const rutaFinalizarCompra = "finalizar-compra";
 </script>
 ```
-![Vscode Logo]((/imgs/scriptHeader.PNG)) 
+
+![Custom Fields](https://raw.githubusercontent.com/maximopeoficiales/Donasusy.com/master/imgs/scriptHeader.PNG)
+
 #### 4. Ahora dentro la siguiente ruta:
 
 Aqui estamos agregando los propiedades **ajax_url** para que sea accedido desde todo wp-admin(Wordpress).
@@ -84,6 +88,10 @@ Este archivo lo encontramos en este repositorio en la carpeta **/cambios/myscrip
 
 En este archivo se explican las funciones que usamos para googlemaps como tambien para el calculo de envio
 
+Esto nos habilita el mapa de google maps, como tambien el calculo de envio automatico
+
+![mapa Google Maps](https://raw.githubusercontent.com/maximopeoficiales/Donasusy.com/master/imgs/mapaGoogleMaps.PNG)
+
 #### 7. Modificando el Template del Modal de vision
 
 Modificamos el template para agregar el mapa con la ubicacion exacta de lugar de entraga de nuestro cliente.Como tambien agregamos la funcion Imprimir Simple con **Javascript**
@@ -93,6 +101,8 @@ Esto estara en :
 
 Ruta: **wp-content\plugins\woocommerce\includes\admin\list-tables\class-wc-admin-list-table-orders.php**
 
+![template](https://raw.githubusercontent.com/maximopeoficiales/Donasusy.com/master/imgs/modalPedidoOjito.PNG)
+
 #### 8.Modifacion en el template edit.php
 
 Aqui se agrego el codigo para la obtencion de link de gmaps, la funcion imprimir, se uso una peticion ajax para obtener los datos y llenar el modal que se agrego.
@@ -101,3 +111,5 @@ Esto se encuentra en el repositorio:
 /Cambios/class-wc-meta-box-order-data.php
 
 Ruta: **wp-content\plugins\woocommerce\includes\admin\meta-boxes\class-wc-meta-box-order-data.php**
+
+![template](https://raw.githubusercontent.com/maximopeoficiales/Donasusy.com/master/imgs/modalImprimirResumenn.PNG)

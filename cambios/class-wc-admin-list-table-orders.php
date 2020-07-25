@@ -376,7 +376,8 @@ class WC_Admin_List_Table_Orders extends WC_Admin_List_Table
 	/* se modifo el template para que imprima el mapa de google maps */
 	public function order_preview_template()
 	{
-?>		
+?>	
+	<!--bloque de codigo  -->	
 		<style>
 			@media(max-width: 768px){
 				.button_margin{

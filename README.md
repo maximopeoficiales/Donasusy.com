@@ -28,9 +28,9 @@ Este plugin es necesario para poder agregar scripts en la pagina de **Finalizar 
 
 #### 2. Entrar al menu de todas las paginas
 
-Aqui entramos a su pagina de **Checkout**
+Aqui entramos a su pagina de **Checkout o (Pagina de finalizacion de compra)**
 
-**Nota:** Una vez dentro recuerda la url asignada a checkout sin "/"
+**Nota:** Una vez dentro recuerda la url asignada a checkout o (Pagina de finalizacion de compra) sin "/"
 
 Ejemplo: "finalizar-compra" esta sera usada para ponerla en una variable constante
 
@@ -60,11 +60,9 @@ Si no especifica las coordenadas de la Tienda se pondra las coordenadas de Lima,
 
 #### 4. Ahora dentro la siguiente ruta:
 
-**wp-content\plugins\woocommerce\includes\admin\class-wc-admin-assets.php**
-
 Aqui estamos agregando los propiedades **ajax_url** para que sea accedido desde todo wp-admin(Wordpress).
 
-Buscamos este script:
+Buscamos este script en **wp-content\plugins\woocommerce\includes\admin\class-wc-admin-assets.php** de su host:
 
 ```php
 wp_localize_script(
@@ -76,7 +74,7 @@ wp_localize_script(
 );
 ```
 
-Y Lo reemplazamos por este:
+Y Lo reemplazamos por este codigo:
 
 ```php
 wp_localize_script(
@@ -91,10 +89,11 @@ wp_localize_script(
 );
 ```
 
+
 #### 5. Registramos el script personalizado
 
 En este caso estamos usando el tema Woodmart entonces lo agregamos a:
-**wp-content\themes\woodmart\functions.php**
+**wp-content\themes\woodmart\functions.php de su host**
 
 Esto es para registrar un archivo de javascript personalizado en el tema.
 
@@ -105,7 +104,7 @@ Buscamos este bloque de codigo:
 wp_localize_script('woodmart-theme', 'woodmart_settings', $translations);
 ```
 
-Debajo desde este bloque pegamos:
+Luego debajo de este bloque pegamos:
 
 ```php
 /* agrego mis scripts perzonalizados */
@@ -113,9 +112,9 @@ wp_enqueue_script('myscripts', WOODMART_SCRIPTS . '/myscripts.js', array(), '1.0
 /* fin de scripts */
 ```
 
-#### 6. En la siguiente ruta creamos el archivo myscripts.js en la ruta:
+#### 6. En la siguiente ruta creamos el archivo myscripts.js:
 
-**wp-content\themes\woodmart\js**
+**wp-content\themes\woodmart\js de su host**
 
 Este archivo lo encontramos en este repositorio en la carpeta **/cambios/myscripts.js**
 
@@ -125,19 +124,20 @@ En este archivo se explican las funciones que usamos para googlemaps como tambie
 
 #### 7. Modificando el Template del Modal de vision
 
-Modificamos el template para agregar el mapa con la ubicacion exacta de lugar de entrega de nuestro cliente.Como tambien agregamos la funcion Imprimir Simple con **Javascript**
-Esto estara en :
+Modificamos el template para agregar el mapa con la ubicacion exacta de lugar de entrega de nuestro cliente.Como tambien agregamos la funcion Imprimir Simple con 
 
-/Cambios/class-wc-admin-list-table-orders.php
+Buscamos en su host: **wp-content\plugins\woocommerce\includes\admin\list-tables\class-wc-admin-list-table-orders.php**
 
-Ruta: **wp-content\plugins\woocommerce\includes\admin\list-tables\class-wc-admin-list-table-orders.php**
 
-Aqui modificamos toda esta funcion hasta el comentario **"fin de modficacion"**
-
+Aqui buscamos la funcion:
 ```php
 public function order_preview_template()
 
 ```
+
+y aqui pegamos el codigo modificado de esta misma funcion que se encuentra en **/cambios/class-wc-admin-list-table-orders.php**
+guiandose con los comentarios que dicen 
+**"bloque de codigo" y fin de modificacion**  
 
 ![template](https://raw.githubusercontent.com/maximopeoficiales/Donasusy.com/master/imgs/modalPedidoOjito.PNG)
 
@@ -148,15 +148,15 @@ Aqui se agrego el codigo para la obtencion de link de gmaps, la funcion imprimir
 Esto se encuentra en el repositorio:
 /Cambios/class-wc-meta-box-order-data.php
 
-Ruta: **wp-content\plugins\woocommerce\includes\admin\meta-boxes\class-wc-meta-box-order-data.php**
+Ruta de su host: **wp-content\plugins\woocommerce\includes\admin\meta-boxes\class-wc-meta-box-order-data.php**
 
-Buscamos en el archivo del repositorio
+Buscamos en el archivo del repositorio:
 
 ```php
 <div class="order_data_column_container">
 ```
 
-Aqui pegamos todo el codigo que se indica como comentario **bloque de codigo**
+Debajo pegamos  el codigo guiandose de los comentarios **bloque de codigo hasta fin de bloque codigo**
 
 Luego buscamos:
 

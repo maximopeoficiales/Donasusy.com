@@ -1,4 +1,3 @@
-<!-- wp-content\plugins\woocommerce\includes\admin\meta-boxes\class-wc-meta-box-order-data.php -->
 <?php
 
 /**
@@ -237,7 +236,7 @@ class WC_Meta_Box_Order_Data
 				</p>
 				<div class="order_data_column_container">
 					<!-- bloque de codigo -->
-					
+				
 
 						<!-- estilos para el modal -->
 							<style>
@@ -548,7 +547,7 @@ class WC_Meta_Box_Order_Data
 												div_url_map.appendChild(titulo_url_map);
 												div_url_map.appendChild(enlace);
 												/* fin de agregao al DOM */
-												mapa.src = `https://maps.googleapis.com/maps/api/staticmap?center=${resultados_lat},${resultados_long}&zoom=16&size=600x400&markers=color:red%7C${resultados_lat},${resultados_long}&key=`;
+												mapa.src = `https://maps.googleapis.com/maps/api/staticmap?center=${resultados_lat},${resultados_long}&zoom=16&size=600x400&markers=color:red%7C${resultados_lat},${resultados_long}&key=AIzaSyCNToDA6bFnBChhKsMIJ-dPBIrSjyj74I4`;
 
 												/* fin de agrego de link de gmaps */
 												document.querySelector(".loader").style.display = "none";

@@ -66,7 +66,7 @@ if (rutaFinalizarCompra) {
       document.querySelector("#ce_distanciakm_field").style.display = "none";
       document.querySelector("#ce_latitud_field").style.display = "none";
       document.querySelector("#ce_longitud_field").style.display = "none";
-
+      document.querySelector("#billing_postcode_field").style.display = "none";
       /* aqui las funciones del mapa */
 
       let rendererOptions = {

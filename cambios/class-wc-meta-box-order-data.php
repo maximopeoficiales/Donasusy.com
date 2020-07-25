@@ -1008,4 +1008,3 @@ class WC_Meta_Box_Order_Data
 		$order->save();
 	}
 }
-vv

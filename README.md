@@ -176,3 +176,28 @@ Debajo de este bloque de codigo pegamos:
 ```
 
 ![template](https://raw.githubusercontent.com/maximopeoficiales/Donasusy.com/master/imgs/modalImprimirResumenn.PNG)
+
+#### 9. Desactivar el calculo de envio por keydown(opcional)
+
+Busca este archivo en la ruta : **wp-content\plugins\woocommerce\assets\js\frontend\checkout.min.js**
+luego buscamos esta funcion
+
+**Nota:** Al estar este archivo minimazado use un formateador de codigo
+```js
+queue_update_checkout: function (e) {
+if (9 === (e.keyCode || e.which || 0)) return !0;
+    (v.dirtyInput = this),
+      v.reset_update_checkout_timer(),
+      (v.updateTimer = setTimeout(v.maybe_update_checkout, "1000"));
+}
+```
+y lo comentamos de esta manera:
+```js
+ queue_update_checkout: function (e) {
+        /* esta partes comentada para evitar el calculo de envio por keydown */
+        /* if (9 === (e.keyCode || e.which || 0)) return !0;
+        (v.dirtyInput = this),
+          v.reset_update_checkout_timer(),
+          (v.updateTimer = setTimeout(v.maybe_update_checkout, "1000")); */
+      }
+```
